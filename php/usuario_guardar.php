@@ -110,7 +110,7 @@ if ($email!= "") {
         $check_usuario=null;
 
 # Verificacion misma Clave  #
-if ($clave_1!= $clave_2) {
+if ($clave_1 != $clave_2) {
     echo '
     <div class="notification is-danger is-light">
         <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -129,6 +129,7 @@ exit();
     // $guardar_usuario = $guardar_usuario->query("INSERT INTO usuario(usuario_nombre,usuario_apellido,usuario_usuario,usuario_clave,usuario_email)
     //  VALUES('$nombre','$apellido','$usuario','$clave','$email')");
 
+        //Forma 2
         $guardar_usuario= conexion();
         $guardar_usuario = $guardar_usuario->prepare("INSERT INTO usuario(usuario_nombre,usuario_apellido,usuario_usuario,usuario_clave,usuario_email)
         VALUES(:nombre,:apellido,:usuario,:clave,:email)");
